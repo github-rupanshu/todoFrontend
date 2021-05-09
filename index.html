@@ -28,6 +28,7 @@
           <span><i class="fas fa-clipboard-list"></i></span>
         </div>
         <div id="frm">
+          <!-- form for input of todo -->
           <form class="todo-form">
             <input
             autocomplete="off"
@@ -36,6 +37,7 @@
               placeholder="Type Your todo list"
               id="write-todo"
             />
+            <!-- submit button for todo -->
             <button type="submit" class="add-btn">
               <span><i class="fas fa-plus-circle"></i></span>
             </button>
@@ -60,6 +62,7 @@
         <!-- list items will be rendered on adding todos -->
       </ul>
       <hr />
+      <!-- bottom container for status of todo  -->
       <div class="bottomContainer">
         <a id="all" onclick="getAll(this)">All: <span></span></a>
         <a id="c" onclick="getAll(this)">Completed: <span></span></a>

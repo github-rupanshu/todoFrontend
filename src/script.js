@@ -1,3 +1,4 @@
+//-------------------------------------------class to store a todo
 class TODO {
 
   constructor(desc) {
@@ -9,13 +10,12 @@ class TODO {
       TODO.counter = (TODO.counter || 0) + 1;
       return TODO.counter;
   }
-
-}
-let todoArray = [];
+};
+let todoArray = [];  // array to store todo objects
 
 const addBtn = document.querySelector(".add-btn");
 
-
+//-------------------------------------------event listner for add btn
 addBtn.addEventListener('click', function (event) {
   event.preventDefault();
   const desc = document.querySelector(".todo-input");
@@ -27,8 +27,8 @@ addBtn.addEventListener('click', function (event) {
   addTodo(desc.value.trim());
   desc.value = "";
 
-})
-//function to add todo to arraylist of todo object
+});
+////-------------------------------------------function to add todo to arraylist of todo object
 function addTodo(item) {
 
   let todo = new TODO(item);
@@ -37,7 +37,7 @@ function addTodo(item) {
 
 };
 //addTodo("sample todo");
-// function to render added to html dom 
+// //-------------------------------------------function to render added to html dom 
 function renderTodos(todo) {
 
   const todoList = document.getElementsByClassName("list")[0];
@@ -62,7 +62,7 @@ function renderTodos(todo) {
   updateCounter();
 
 };
-//function to update count of task left 
+////-------------------------------------------function to update count of  task 
 function updateCounter() {
   let  countAll = todoArray.length ;
   let cc = 0;
@@ -82,8 +82,8 @@ function updateCounter() {
   }else if(document.contains(document.getElementById('notodo'))){
       document.getElementById('notodo').remove();
   }
-  //document.querySelector("#count").innerHTML = count;
-}
+
+};
 
 
 // checkbox event listner to update status for todo
@@ -92,18 +92,18 @@ function updateSts(checkbox) {
   if (checkbox.checked === true) {
       //console.log(todo.elem.completed,"checked");
       todo.elem.completed = true;
-      console.log(todo.elem.completed, "checked");
+      //console.log(todo.elem.completed, "checked");
 
   } else {
 
       todo.elem.completed = false;
       //updateCounter(); 
-      console.log(todo.elem.completed, "uncheck");
+      //console.log(todo.elem.completed, "uncheck");
   }
   updateCounter();
 
 };
-//function to find element inside array  and return index and elem both 
+////-------------------------------------------function to find element inside array  and return index and elem both 
 function find(key, myArray) {
   for (var i = 0; i < myArray.length; i++) {
       if (myArray[i].id.toString() === key) {
@@ -113,9 +113,9 @@ function find(key, myArray) {
           };
       }
   }
-}
+};
 
-// dunction for event listner invoced on click of delte btn
+////------------------------------------------- dunction for event listner invoced on click of delte btn
 function deleteTodo(delBtn) {
   const id = delBtn.id.split("-")[1];
   const todo = find(id, todoArray);
@@ -125,7 +125,7 @@ function deleteTodo(delBtn) {
 
 };
 
-//function to check all checkboxs
+////-------------------------------------------function to check all checkboxs
 function checkAll() {
   const cbs = document.getElementsByName("chk");
   for (let i = 0; i < cbs.length; i++) {
@@ -134,7 +134,7 @@ function checkAll() {
   }
   updateCounter();
 }
-// function to remove all todo which are completed
+//------------------------------------------- function to remove all todo which are completed
 function clearCompleted() {
   for (let i = 0; i < todoArray.length; i++) {
       if (todoArray[i].completed) {
@@ -146,11 +146,13 @@ function clearCompleted() {
           
       }
   }
-  todoArray = todoArray.filter(Boolean);
+  // to remove empty because we used delete arrayName[index] to delete 
+  todoArray = todoArray.filter(Boolean); 
   updateCounter();
   
 }
-
+//-------------------------------------------function called on click on status element on todo 
+//-------------------------------------------they will render todo according to status
 function getAll(elem){
   const sts = elem.id;
   if(sts==="all"){
@@ -159,6 +161,7 @@ function getAll(elem){
           renderTodos(todoArray[i]);
       }
       document.getElementById('check-all').style.pointerEvents = 'auto';
+      document.getElementById('clear-comp').style.pointerEvents = 'auto';
       
   }else if(sts==="c"){
       document.querySelector(".list").innerHTML = "";
@@ -169,8 +172,11 @@ function getAll(elem){
               
           }
       }
-      document.getElementById('check-all').style.pointerEvents = 'none';
-      //document.querySelector("#taskCount p").innerHTML =`<span id="count">${count}</span> tasks completed` ;
+      // to disable checkall button because in completed list todos all todos are already checked
+      //and to enable clear complted element 
+      document.getElementById('check-all').style.pointerEvents = 'none'; 
+      document.getElementById('clear-comp').style.pointerEvents = 'auto';
+     
   }else if(sts==="u") {
       document.querySelector(".list").innerHTML = "";
       for (let i = 0; i < todoArray.length; i++) {
@@ -178,7 +184,8 @@ function getAll(elem){
               renderTodos(todoArray[i]);
           }
       }
-      document.getElementById('check-comp').style.pointerEvents = 'none';
+      //disable clear complted element  and enable check all element
+      document.getElementById('clear-comp').style.pointerEvents = 'none';
       document.getElementById('check-all').style.pointerEvents = 'auto';
   }
   updateCounter();
