@@ -68,6 +68,9 @@ a{
 input:focus + button {
     opacity:1;
 }
+input:hover + .add-btn{
+    opacity:1;
+}
 .add-btn{
     background-color: transparent;
     border: none;
