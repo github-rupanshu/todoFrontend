@@ -119,7 +119,7 @@ function find(key, myArray) {
 function deleteTodo(delBtn) {
   const id = delBtn.id.split("-")[1];
   const todo = find(id, todoArray);
-  todoArray.splice(todo.index, 1);
+  todoArray.splice(todo.index, 1); // to remove from array 
   delBtn.parentElement.remove();
   updateCounter();
 
