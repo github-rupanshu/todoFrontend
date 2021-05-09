@@ -65,10 +65,14 @@ a{
   font-weight: bold;
   font-size: large;
 }
+input:focus + button {
+    opacity:1;
+}
 .add-btn{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    opacity:0;
 }
 
 /* todoStatus */
@@ -138,6 +142,10 @@ a{
   /* delete btn */
  .del-btn{
     cursor: pointer;
+    visibility: hidden;
+ }
+ .list:hover  .del-btn{
+     visibility:visible;
  }
 
 /* bottom section */
