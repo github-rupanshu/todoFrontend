@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- main style sheet link -->
+    <link rel="stylesheet" href="src/main.css" />
+    <!-- link for using google font api  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto+Mono:ital,wght@0,100;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome for using icons -->
+    <script
+      src="https://kit.fontawesome.com/35d2d63a09.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>TODO App</title>
+  </head>
+
+  <body>
+    <div id="main-container" class="">
+      <!-- first input container  -->
+      <div id="add-todo-conatiner">
+        <div>
+          <span><i class="fas fa-clipboard-list"></i></span>
+        </div>
+        <div id="frm">
+          <form class="todo-form">
+            <input
+              class="todo-input"
+              type="text"
+              placeholder="Type Your todo list"
+              id="write-todo"
+            />
+            <button type="submit" class="add-btn">
+              <span><i class="far fa-arrow-alt-circle-right"></i></span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <hr />
+      <!-- action container for complete task -->
+      <div class="todoStatus">
+        <div>
+          <span><i class="fas fa-check-double"></i></span>
+          <a id="check-all" onclick="checkAll()">Complete all tasks</a>
+        </div>
+        <div>
+          <a id="clear-comp" onclick="clearCompleted()">Clear completed</a>
+        </div>
+      </div>
+      <!-- container for todo list -->
+      <hr />
+
+      <ul class="list">
+        <!-- list items will be rendered on adding todos -->
+      </ul>
+      <hr />
+      <div class="bottomContainer">
+        <a id="all" onclick="getAll(this)">All: <span></span></a>
+        <a id="c" onclick="getAll(this)">Completed: <span></span></a>
+        <a id="u" onclick="getAll(this)">Uncompleted: <span></span></a>
+        <!-- </div> -->
+      </div>
+    </div>
+
+    <script src="src/script.js"></script>
+  </body>
+</html>

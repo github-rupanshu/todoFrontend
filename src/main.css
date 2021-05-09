@@ -1,0 +1,159 @@
+:root{
+    background-color: #001634;
+    font-family: 'Itim', cursive;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+p {
+    margin: 0%;
+
+}
+hr{
+    border: 1px solid lightgray;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    
+}
+
+
+/* main container for  todo  */
+#main-container {
+    min-width: 350px;
+    margin: auto;
+    padding: 2%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-top: 4%;
+    padding: 2%;
+    /* background-color: #e68d2b; */
+     background-image: linear-gradient(to right top, #c97921, #d7941b, #e0b017, #e4cd1b, #e3eb2b);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+     border-radius: 20px;
+}
+/* first input container */
+#add-todo-conatiner{
+    display: flex;
+    width: 100%;
+    background-color: lightgrey;
+    padding: 2%;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+     border-radius: 20px;
+}
+#frm{
+    width: 100%;
+}
+#add-todo-conatiner input
+{
+  width: 90%;
+  background-color: lightgrey;
+  border:none;
+  outline: none;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: large;
+}
+.add-btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* todoStatus */
+.todoStatus{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    
+}
+
+/* list conatiner  */
+.list{
+    width: 100%;
+    list-style-type: none; 
+    padding: 0%; 
+    margin: auto;
+}
+.listItems{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    text-overflow: auto;
+  
+}
+
+.listItems label{
+   
+    align-self:flex-start;
+    font-weight: bolder;
+    cursor: pointer;
+    
+    
+}
+
+/* round checkbox for list */
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: gray;
+   
+}
+.checkbox-round:checked + .label-for-check p {
+    text-decoration: line-through;
+  }
+  .label-for-check p{
+     
+     display: inline-block;
+     max-width: 300px;
+     overflow-wrap: break-word;
+     word-wrap: break-word;
+     hyphens: auto;  
+     font-weight: bolder;
+     font-family: 'Roboto Mono', monospace;
+     font-size: larger;  
+
+  }
+  /* delete btn */
+ .del-btn{
+    cursor: pointer;
+ }
+
+/* bottom section */
+.bottomContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
